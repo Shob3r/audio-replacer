@@ -1,6 +1,6 @@
 {
   "name": "audio-replacer",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Easily dub video game voice-overs",
   "type": "module",
   "scripts": {
