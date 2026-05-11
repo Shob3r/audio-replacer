@@ -11,36 +11,36 @@ name = "audio_replacer_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2.5.3", features = [] }
+tauri-build = { version = "2.6.1", features = [] }
 
 [dependencies]
-tauri = { version = "2.9.5", features = ["protocol-asset", "tray-icon"] }
-tauri-plugin-opener = "2.5.3"
+tauri = { version = "2.11.1", features = ["protocol-asset", "tray-icon"] }
+tauri-plugin-opener = "2.5.4"
 tauri-plugin-os = "2.3.2"
-tauri-plugin-fs = "2.4.5"
-tauri-plugin-shell = "2.3.4"
+tauri-plugin-fs = "2.5.1"
+tauri-plugin-shell = "2.3.5"
 tauri-plugin-log = { version = "2.8.0", features = ["colored"] }
 tauri-plugin-process = "2.3.1"
 tauri-plugin-upload = "2.4.0"
-tauri-plugin-dialog = "2.6.0"
+tauri-plugin-dialog = "2.7.1"
 
 # The person who develops this hasn't fixed a whisper.cpp build issue in whisper-rs which causes whisper models to run up to 10 times slower on release builds. My fork fixes this
 whisper-rs = {git = "https://github.com/Shob3r/whisper-rs.git", version ="0.15.1"}
 
 num_cpus = "1.17.0"
-whoami = "2.0.2"
+whoami = "2.1.2"
 hound = "3.5.1"
 walkdir = "2.5.0"
 tauri-plugin-drpc = "*"
-rand = "0.9.2"
+rand = "0.10.1"
 tauri-plugin-audio-recorder = "0.1.0"
 serde_json = "1.0.149" # Do not remove. Compile fails otherwise. RustRover says it's not used though. dunno why
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-global-shortcut = "2.3.1"
-tauri-plugin-single-instance = "2.3.7"
-tauri-plugin-updater = "2.9.0"
+tauri-plugin-single-instance = "2.4.2"
+tauri-plugin-updater = "2.10.1"
 
 # Project needs a dependency on this specifically on Linux because WebKit2Gtk has a funny issue where it automatically rejects permission requests for the webview for god knows what reason
 [target.'cfg(target_os = "linux")'.dependencies]
-webkit2gtk = "2.0.1" # DO NOT UPDATE; tauri itself is incompatible with 2.0.2
+webkit2gtk = "2.0.2"
